@@ -1,0 +1,121 @@
+Log file per (Matteo, Baldoni)
+
+----> 50952439395 <----
+0- Inizializzazione comportamento.
+<<---------
+
+----> 50952439549 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50952439648 <----
+2- Preparo REQUEST dell'ora.
+<<---------
+
+----> 50952439992 <----
+3- Invio REQUEST.
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952497702 <----
+4- Invita REQUEST.
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952497953 <----
+5- Attendo risposta.
+<<---------
+
+----> 50952540904 <----
+6- Trovata risposta.
+Performative:		AGREE
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		REQUEST accettata
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50952541197 <----
+8- La risposta e' una agree, prepara la conferma.
+Performative:		AGREE
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		REQUEST accettata
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50952541482 <----
+9- Invio la conferma.
+Performative:		INFORM
+Sender:			(Matteo, Baldoni)
+Receiver:		(Berlino, Time Provider)
+Content:		Aspetto l'ora.
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952557748 <----
+10- Inviata la conferma.
+Performative:		INFORM
+Sender:			(Matteo, Baldoni)
+Receiver:		(Berlino, Time Provider)
+Content:		Aspetto l'ora.
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952558054 <----
+11- Attendo il messaggio con l'ora da (Berlino, Time Provider)
+<<---------
+----> 50954558393 <----
+12- Controllo se arrivato il messaggio con l'ora da (Berlino, Time Provider)
+<<---------
+
+----> 50954558803 <----
+13- Leggo il messaggio con l'ora da (Berlino, Time Provider)
+<<---------
+
+----> 50954559007 <----
+14- Letto il messaggio con l'ora da (Berlino, Time Provider)
+Performative:		INFORM
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		Ora: 13
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50954559641 <----
+END- Esecuguita dispose.
+<<---------

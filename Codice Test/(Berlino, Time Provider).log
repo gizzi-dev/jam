@@ -1,0 +1,213 @@
+Log file per (Berlino, Time Provider)
+
+----> 50940762820 <----
+0- Inizializzazione comportamento.
+<<---------
+
+----> 50940762993 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50952490206 <----
+2- Ricevuto messaggio iniziale, inizio sua analisi
+<<---------
+
+----> 50952490435 <----
+9- REQUEST accettabile, preparo AGREE.
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952490707 <----
+10- Invio AGREE.
+Performative:		AGREE
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		REQUEST accettata
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50952542054 <----
+11- Inviata AGREE.
+Performative:		AGREE
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		REQUEST accettata
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50952542413 <----
+12- Mi metto in attesa conferma da (Matteo, Baldoni).
+<<---------
+
+----> 50953542973 <----
+13- Mi risveglio e verifico se arrivata conferfa da (Matteo, Baldoni).
+<<---------
+
+----> 50953543640 <----
+15- Arrivata conferma da (Matteo, Baldoni).
+Performative:		INFORM
+Sender:			(Matteo, Baldoni)
+Receiver:		(Berlino, Time Provider)
+Content:		Aspetto l'ora.
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953544248 <----
+16- Preparo messaggio con ora per (Matteo, Baldoni).
+<<---------
+
+----> 50953544480 <----
+17- Invio ora a (Matteo, Baldoni).
+Performative:		INFORM
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		Ora: 13
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953562281 <----
+19- Inviata ora a (Matteo, Baldoni).
+Performative:		INFORM
+Sender:			(Berlino, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		Ora: 13
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953562527 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50953562633 <----
+2- Ricevuto messaggio iniziale, inizio sua analisi
+<<---------
+
+----> 50953562723 <----
+3- Performativa diversa da REQUEST, preparo REFUSE.
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953562918 <----
+4- Invio REFUSE
+Performative:		REFUSE
+Sender:			(Berlino, Time Provider)
+Receiver:		(Mario, Rossi)
+Content:		Performativa non accettata
+ExtraArgument: >--->
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953608343 <----
+5- Inviata REFUSE
+Performative:		REFUSE
+Sender:			(Berlino, Time Provider)
+Receiver:		(Mario, Rossi)
+Content:		Performativa non accettata
+ExtraArgument: >--->
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953608704 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50953608805 <----
+2- Ricevuto messaggio iniziale, inizio sua analisi
+<<---------
+
+----> 50953608888 <----
+6- Non capisco il content, preparo NOT_UDERSTOOD.
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953609066 <----
+7- Invio NOT_UNDERSTOOD.
+Performative:		NOT_UNDERSTOOD
+Sender:			(Berlino, Time Provider)
+Receiver:		(Mercoledi, Adams)
+Content:		REQUEST non compresa
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953629605 <----
+8- Invita NOT_UNDERSTOOD.
+Performative:		NOT_UNDERSTOOD
+Sender:			(Berlino, Time Provider)
+Receiver:		(Mercoledi, Adams)
+Content:		REQUEST non compresa
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953629969 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------

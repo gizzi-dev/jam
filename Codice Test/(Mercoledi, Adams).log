@@ -1,0 +1,77 @@
+Log file per (Mercoledi, Adams)
+
+----> 50952508168 <----
+0- Inizializzazione comportamento.
+<<---------
+
+----> 50952508266 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50952508362 <----
+2- Preparo REQUEST dell'ora.
+<<---------
+
+----> 50952508470 <----
+3- Invio REQUEST.
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952540056 <----
+4- Invita REQUEST.
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952540402 <----
+5- Attendo risposta.
+<<---------
+
+----> 50953630502 <----
+6- Trovata risposta.
+Performative:		NOT_UNDERSTOOD
+Sender:			(Berlino, Time Provider)
+Receiver:		(Mercoledi, Adams)
+Content:		REQUEST non compresa
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953630854 <----
+7- La risposta non e' una agree eseguo una done.
+Performative:		NOT_UNDERSTOOD
+Sender:			(Berlino, Time Provider)
+Receiver:		(Mercoledi, Adams)
+Content:		REQUEST non compresa
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953631146 <----
+END- Esecuguita dispose.
+<<---------

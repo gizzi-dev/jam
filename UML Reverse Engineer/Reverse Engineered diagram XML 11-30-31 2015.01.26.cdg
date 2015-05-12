@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UML Class Diagram">
+  <ClassDiagramComponents>
+    <Interface xPosition="50.0" yPosition="90.0" package="JAM" name="ADSL" visibility="public">
+      <Methods>
+        <Method name="getRemoteMessageBox" visibility="public" returnType="List&lt;RemoteMessageBox&gt;">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="insertRemoteMessageBox" visibility="public" returnType="void">
+          <Argument type="RemoteMessageBox" name="messageBox"/>
+        </Method>
+        <Method name="removeRemoteMessageBox" visibility="public" returnType="void">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="300.0" yPosition="90.0" package="JAM" name="ADSLImpl" visibility="public">
+      <Constructors>
+        <Constructor name="ADSLImpl" visibility="public"/>
+        <Constructor name="ADSLImpl" visibility="public">
+          <argument type="String" name="name"/>
+          <argument type="int" name="port"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="messagesBoxes" visibility="private" type="List&lt;RemoteMessageBox&gt;"/>
+        <Field name="port" visibility="private" type="int"/>
+        <Field name="name" visibility="private" type="String"/>
+        <Field name="ip" visibility="private" type="String"/>
+        <Field name="listeners" visibility="private" type="java.util.Vector"/>
+      </Fields>
+      <Methods>
+        <Method name="getRemoteMessageBox" visibility="public" returnType="List&lt;RemoteMessageBox&gt;">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="insertRemoteMessageBox" visibility="public" returnType="void">
+          <Argument type="RemoteMessageBox" name="messageBox"/>
+        </Method>
+        <Method name="removeRemoteMessageBox" visibility="public" returnType="void">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="startRMIRegistry" visibility="public" returnType="void"/>
+        <Method name="startADSL" visibility="public" returnType="void"/>
+        <Method name="stopADSL" visibility="public" returnType="void"/>
+        <Method name="notifyConsoleChange" visibility="protected" returnType="void">
+          <Argument type="String" name="count"/>
+        </Method>
+        <Method name="addConsoleChangeListener" visibility="public" returnType="void">
+          <Argument type="ConsoleChangeListener" name="ccl"/>
+        </Method>
+        <Method name="removeConsoleChangeListener" visibility="public" returnType="void" isSynchronized="true">
+          <Argument type="ConsoleChangeListener" name="ccl"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="550.0" yPosition="90.0" package="JAM" name="ADSLMonitor" visibility="public">
+      <Constructors>
+        <Constructor name="ADSLMonitor" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="port" visibility="private" type="int"/>
+        <Field name="adsl" visibility="private" type="ADSLImpl"/>
+        <Field name="giaRegistrato" visibility="private" type="boolean"/>
+        <Field name="label" visibility="private" type="JLabel"/>
+        <Field name="label2" visibility="private" type="JLabel"/>
+        <Field name="panel" visibility="private" type="JPanel"/>
+        <Field name="orizontale1" visibility="private" type="JPanel"/>
+        <Field name="orizontale2" visibility="private" type="JPanel"/>
+        <Field name="orizontale3" visibility="private" type="JPanel"/>
+        <Field name="orizontale4" visibility="private" type="JPanel"/>
+        <Field name="content" visibility="private" type="JPanel"/>
+        <Field name="lateralPanelRight" visibility="private" type="JPanel"/>
+        <Field name="portTextField" visibility="private" type="JTextField"/>
+        <Field name="startRegButton" visibility="private" type="JButton"/>
+        <Field name="startAdslButton" visibility="private" type="JButton"/>
+        <Field name="stopAdslButton" visibility="private" type="JButton"/>
+        <Field name="exitButton" visibility="private" type="JButton"/>
+        <Field name="console" visibility="private" type="JTextArea"/>
+        <Field name="scroll" visibility="private" type="JScrollPane"/>
+        <Field name="separatore" visibility="private" type="JSeparator"/>
+      </Fields>
+      <Methods>
+        <Method name="StartReg" visibility="public" returnType="void">
+          <Argument type="ADSLMonitor" name="a"/>
+        </Method>
+        <Method name="StartUp" visibility="public" returnType="void"/>
+        <Method name="shutDown" visibility="public" returnType="void"/>
+        <Method name="exit" visibility="public" returnType="void"/>
+        <Method name="ConsoleChange" visibility="public" returnType="void">
+          <Argument type="ConsoleEvent" name="evt"/>
+        </Method>
+        <Method name="main" visibility="public" returnType="void" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="800.0" yPosition="90.0" package="JAM" name="buttonAction" visibility="public">
+      <Constructors>
+        <Constructor name="buttonAction" visibility="public">
+          <argument type="ADSLMonitor" name="a"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="a" visibility="package" type="ADSLMonitor"/>
+      </Fields>
+      <Methods>
+        <Method name="actionPerformed" visibility="public" returnType="void">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="50.0" yPosition="490.0" package="JAM" name="AgentID" visibility="public">
+      <Methods>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="agentID"/>
+        </Method>
+        <Method name="getName" visibility="public" returnType="String"/>
+        <Method name="getCategory" visibility="public" returnType="String"/>
+        <Method name="toString" visibility="public" returnType="String"/>
+      </Methods>
+    </Interface>
+    <Class xPosition="300.0" yPosition="490.0" package="JAM" name="CategoryAgentID" visibility="public">
+      <Constructors>
+        <Constructor name="CategoryAgentID" visibility="public">
+          <argument type="String" name="category"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="category" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getCategory" visibility="public" returnType="String"/>
+        <Method name="setCategory" visibility="public" returnType="void">
+          <Argument type="String" name="category"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agentID"/>
+        </Method>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="agentID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="550.0" yPosition="490.0" package="JAM" name="ConsoleChangeListener" visibility="public">
+      <Methods>
+        <Method name="ConsoleChange" visibility="package" returnType="void">
+          <Argument type="ConsoleEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="800.0" yPosition="490.0" package="JAM" name="ConsoleEvent" visibility="public">
+      <Constructors>
+        <Constructor name="ConsoleEvent" visibility="package">
+          <argument type="Object" name="source"/>
+          <argument type="String" name="text"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="text" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getText" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+    <Class xPosition="50.0" yPosition="890.0" package="JAM" name="GenericAgentID" visibility="public">
+      <Constructors>
+        <Constructor name="GenericAgentID" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods>
+        <Method name="toString" visibility="public" returnType="String"/>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agentID"/>
+        </Method>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="agentID"/>
+        </Method>
+        <Method name="getName" visibility="public" returnType="String"/>
+        <Method name="getCategory" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+    <Class xPosition="300.0" yPosition="890.0" package="JAM" name="JAMADSLException" visibility="public">
+      <Constructors>
+        <Constructor name="JAMADSLException" visibility="public">
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMADSLException" visibility="public">
+          <argument type="String" name="message"/>
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMADSLException" visibility="public">
+          <argument type="String" name="message"/>
+        </Constructor>
+        <Constructor name="JAMADSLException" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods/>
+    </Class>
+    <Class xPosition="550.0" yPosition="890.0" package="JAM" isAbstract="true" name="JAMAgent" visibility="public">
+      <Constructors>
+        <Constructor name="JAMAgent" visibility="public">
+          <argument type="AgentID" name="myID"/>
+        </Constructor>
+        <Constructor name="JAMAgent" visibility="public">
+          <argument type="AgentID" name="myID"/>
+          <argument type="String" name="ip"/>
+          <argument type="String" name="name"/>
+          <argument type="int" name="port"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="myMessageBox" visibility="private" type="MessageBox"/>
+        <Field name="myID" visibility="private" type="PersonalAgentID"/>
+        <Field name="adsl" visibility="private" type="ADSL"/>
+        <Field name="name" visibility="private" type="String"/>
+        <Field name="ip" visibility="private" type="String"/>
+        <Field name="port" visibility="private" type="int"/>
+        <Field name="log" visibility="private" type="String"/>
+        <Field name="myBehaviours" visibility="private" type="LinkedList&lt;JAMBehaviour&gt;"/>
+      </Fields>
+      <Methods>
+        <Method name="init" visibility="public" returnType="void"/>
+        <Method name="destroy" visibility="public" returnType="void"/>
+        <Method name="check" visibility="public" returnType="boolean"/>
+        <Method name="check" visibility="public" returnType="boolean">
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="check" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="check" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="send" visibility="public" returnType="void">
+          <Argument type="Message" name="message"/>
+        </Method>
+        <Method name="receive" visibility="public" returnType="Message"/>
+        <Method name="receive" visibility="public" returnType="Message">
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="receive" visibility="public" returnType="Message">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="receive" visibility="public" returnType="Message">
+          <Argument type="AgentID" name="agente"/>
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="getMyID" visibility="public" returnType="PersonalAgentID"/>
+        <Method name="start" visibility="public" returnType="void"/>
+        <Method name="addBehaviour" visibility="public" returnType="void">
+          <Argument type="JAMBehaviour" name="behaviour"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="800.0" yPosition="890.0" package="JAM" name="JAMAgentMonitor" visibility="public">
+      <Constructors>
+        <Constructor name="JAMAgentMonitor" visibility="public">
+          <argument type="JAMAgent" name="ag"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="agent" visibility="private" type="JAMAgent"/>
+        <Field name="initStatus" visibility="package" type="boolean"/>
+        <Field name="initButton" visibility="private" type="JButton"/>
+        <Field name="startButton" visibility="private" type="JButton"/>
+        <Field name="destroyButton" visibility="private" type="JButton"/>
+        <Field name="exitButton" visibility="private" type="JButton"/>
+        <Field name="scritta" visibility="private" type="JLabel"/>
+        <Field name="console" visibility="private" type="JTextArea"/>
+        <Field name="scroll" visibility="private" type="JScrollPane"/>
+        <Field name="panel" visibility="private" type="JPanel"/>
+        <Field name="upPanel" visibility="private" type="JPanel"/>
+        <Field name="downPanel" visibility="private" type="JPanel"/>
+        <Field name="lateralPanel" visibility="private" type="JPanel"/>
+      </Fields>
+      <Methods>
+        <Method name="update" visibility="public" returnType="void">
+          <Argument type="Observable" name="ob"/>
+          <Argument type="Object" name="extra_arg"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="50.0" yPosition="1290.0" package="JAM" isAbstract="true" name="JAMBehaviour" visibility="public">
+      <Constructors>
+        <Constructor name="JAMBehaviour" visibility="public">
+          <argument type="JAMAgent" name="agent"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="done" visibility="private" type="boolean"/>
+        <Field name="myThread" visibility="private" type="Thread"/>
+        <Field name="myAgent" visibility="public" type="JAMAgent"/>
+      </Fields>
+      <Methods>
+        <Method name="done" visibility="public" returnType="void"/>
+        <Method name="isAvviabile" visibility="public" returnType="boolean"/>
+        <Method name="isDone" visibility="public" returnType="boolean"/>
+        <Method name="setMyThread" visibility="public" returnType="void">
+          <Argument type="Thread" name="myThread"/>
+        </Method>
+        <Method name="sleep" visibility="public" returnType="void">
+          <Argument type="long" name="ms"/>
+        </Method>
+        <Method name="action" visibility="public" returnType="void" isAbstract="true"/>
+        <Method name="setup" visibility="public" returnType="void" isAbstract="true"/>
+        <Method name="dispose" visibility="public" returnType="void" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class xPosition="300.0" yPosition="1290.0" package="JAM" name="JAMBehaviourException" visibility="public">
+      <Constructors>
+        <Constructor name="JAMBehaviourException" visibility="public">
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMBehaviourException" visibility="public">
+          <argument type="String" name="message"/>
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMBehaviourException" visibility="public">
+          <argument type="String" name="message"/>
+        </Constructor>
+        <Constructor name="JAMBehaviourException" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods/>
+    </Class>
+    <Class xPosition="550.0" yPosition="1290.0" package="JAM" name="JAMBehaviourInterruptedException" visibility="public">
+      <Constructors>
+        <Constructor name="JAMBehaviourInterruptedException" visibility="public">
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMBehaviourInterruptedException" visibility="public">
+          <argument type="String" name="message"/>
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMBehaviourInterruptedException" visibility="public">
+          <argument type="String" name="message"/>
+        </Constructor>
+        <Constructor name="JAMBehaviourInterruptedException" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods/>
+    </Class>
+    <Class xPosition="800.0" yPosition="1290.0" package="JAM" name="JAMException" visibility="public">
+      <Constructors>
+        <Constructor name="JAMException" visibility="public">
+          <argument type="String" name="message"/>
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMException" visibility="public">
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMException" visibility="public">
+          <argument type="String" name="message"/>
+        </Constructor>
+        <Constructor name="JAMException" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods/>
+    </Class>
+    <Class xPosition="50.0" yPosition="1690.0" package="JAM" name="JAMIOException" visibility="public">
+      <Constructors>
+        <Constructor name="JAMIOException" visibility="public">
+          <argument type="String" name="message"/>
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMIOException" visibility="public">
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMIOException" visibility="public">
+          <argument type="String" name="message"/>
+        </Constructor>
+        <Constructor name="JAMIOException" visibility="public"/>
+      </Constructors>
+      <Fields/>
+      <Methods/>
+    </Class>
+    <Class xPosition="300.0" yPosition="1690.0" package="JAM" name="JAMMessageBoxException" visibility="public">
+      <Constructors>
+        <Constructor name="JAMMessageBoxException" visibility="public"/>
+        <Constructor name="JAMMessageBoxException" visibility="public">
+          <argument type="String" name="msg"/>
+        </Constructor>
+        <Constructor name="JAMMessageBoxException" visibility="public">
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor name="JAMMessageBoxException" visibility="public">
+          <argument type="String" name="message"/>
+          <argument type="Throwable" name="cause"/>
+        </Constructor>
+      </Constructors>
+      <Fields/>
+      <Methods/>
+    </Class>
+    <Class xPosition="550.0" yPosition="1690.0" package="JAM" isAbstract="true" name="JAMSimpleBehaviour" visibility="public">
+      <Constructors>
+        <Constructor name="JAMSimpleBehaviour" visibility="public">
+          <argument type="JAMAgent" name="agent"/>
+        </Constructor>
+      </Constructors>
+      <Fields/>
+      <Methods>
+        <Method name="run" visibility="public" returnType="void"/>
+      </Methods>
+    </Class>
+    <Class xPosition="800.0" yPosition="1690.0" package="JAM" isAbstract="true" name="JAMWhileBehaviour" visibility="public">
+      <Constructors>
+        <Constructor name="JAMWhileBehaviour" visibility="public">
+          <argument type="JAMAgent" name="agent"/>
+        </Constructor>
+      </Constructors>
+      <Fields/>
+      <Methods>
+        <Method name="run" visibility="public" returnType="void"/>
+      </Methods>
+    </Class>
+    <Class xPosition="50.0" yPosition="2090.0" package="JAM" name="Message" visibility="public">
+      <Constructors>
+        <Constructor name="Message" visibility="public">
+          <argument type="AgentID" name="sender"/>
+          <argument type="AgentID" name="receiver"/>
+          <argument type="Performative" name="performative"/>
+          <argument type="String" name="content"/>
+        </Constructor>
+        <Constructor name="Message" visibility="public">
+          <argument type="AgentID" name="sender"/>
+          <argument type="AgentID" name="receiver"/>
+          <argument type="Performative" name="performative"/>
+          <argument type="String" name="content"/>
+          <argument type="Object" name="extra"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="sender" visibility="private" type="AgentID"/>
+        <Field name="receiver" visibility="private" type="AgentID"/>
+        <Field name="performative" visibility="private" type="Performative"/>
+        <Field name="content" visibility="private" type="String"/>
+        <Field name="extraArgument" visibility="private" type="Object"/>
+      </Fields>
+      <Methods>
+        <Method name="getSender" visibility="public" returnType="AgentID"/>
+        <Method name="setSender" visibility="public" returnType="void">
+          <Argument type="AgentID" name="newSender"/>
+        </Method>
+        <Method name="getReceiver" visibility="public" returnType="AgentID"/>
+        <Method name="setReceiver" visibility="public" returnType="void">
+          <Argument type="AgentID" name="newReceiver"/>
+        </Method>
+        <Method name="getPerformative" visibility="public" returnType="Performative"/>
+        <Method name="setPerformative" visibility="public" returnType="void">
+          <Argument type="Performative" name="newPerformative"/>
+        </Method>
+        <Method name="getContent" visibility="public" returnType="String"/>
+        <Method name="setString" visibility="public" returnType="void">
+          <Argument type="String" name="newContent"/>
+        </Method>
+        <Method name="getExtraArg" visibility="public" returnType="Object"/>
+        <Method name="setExtraArg" visibility="public" returnType="void">
+          <Argument type="Object" name="ExA"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+    <Class xPosition="300.0" yPosition="2090.0" package="JAM" name="MessageBox" visibility="public">
+      <Constructors>
+        <Constructor name="MessageBox" visibility="public">
+          <argument type="PersonalAgentID" name="owner"/>
+        </Constructor>
+      </Constructors>
+      <Fields/>
+      <Methods>
+        <Method name="readMessage" visibility="public" returnType="Message" isSynchronized="true"/>
+        <Method name="readMessage" visibility="public" returnType="Message" isSynchronized="true">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="readMessage" visibility="public" returnType="Message" isSynchronized="true">
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="readMessage" visibility="public" returnType="Message" isSynchronized="true">
+          <Argument type="AgentID" name="agente"/>
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean"/>
+        <Method name="isThereMessage" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean">
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="writeMessage" visibility="public" returnType="void" isSynchronized="true">
+          <Argument type="Message" name="msg"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="550.0" yPosition="2090.0" package="JAM" name="MessageBoxNoSync" visibility="public">
+      <Constructors>
+        <Constructor name="MessageBoxNoSync" visibility="public">
+          <argument type="PersonalAgentID" name="owner"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="owner" visibility="private" type="PersonalAgentID"/>
+        <Field name="box" visibility="private" type="List&lt;Message&gt;"/>
+      </Fields>
+      <Methods>
+        <Method name="getOwner" visibility="public" returnType="PersonalAgentID"/>
+        <Method name="isBoxEmpty" visibility="public" returnType="boolean"/>
+        <Method name="readMessage" visibility="public" returnType="Message"/>
+        <Method name="readMessage" visibility="public" returnType="Message">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="readMessage" visibility="public" returnType="Message">
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="readMessage" visibility="public" returnType="Message">
+          <Argument type="AgentID" name="agente"/>
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean">
+          <Argument type="Performative" name="performative"/>
+        </Method>
+        <Method name="isThereMessage" visibility="public" returnType="boolean"/>
+        <Method name="writeMessage" visibility="public" returnType="void">
+          <Argument type="Message" name="msg"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum xPosition="800.0" yPosition="2090.0" package="JAM" name="Performative" visibility="public">
+      <Literals>
+        <Literal name="UNKNOWN"/>
+        <Literal name="REQUEST"/>
+        <Literal name="INFORM"/>
+        <Literal name="REFUSE"/>
+        <Literal name="QUERY_IF"/>
+        <Literal name="QUERY_REF"/>
+        <Literal name="AGREE"/>
+        <Literal name="FAILURE"/>
+        <Literal name="NOT_UNDERSTOOD"/>
+        <Literal name="CALL_FOR_PROPOSAL"/>
+        <Literal name="PROPOSAL"/>
+      </Literals>
+    </Enum>
+    <Class xPosition="50.0" yPosition="2490.0" package="JAM" name="PersonalAgentID" visibility="public">
+      <Constructors>
+        <Constructor name="PersonalAgentID" visibility="public">
+          <argument type="String" name="name"/>
+          <argument type="String" name="category"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="name" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="getName" visibility="public" returnType="String"/>
+        <Method name="getCategory" visibility="public" returnType="String"/>
+        <Method name="setName" visibility="public" returnType="void">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="setCategory" visibility="public" returnType="void">
+          <Argument type="String" name="category"/>
+        </Method>
+        <Method name="toString" visibility="public" returnType="String"/>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="AgentID" name="agente"/>
+        </Method>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="agentID"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="300.0" yPosition="2490.0" package="JAM" name="RemoteMessageBox" visibility="public">
+      <Methods>
+        <Method name="writeMessage" visibility="public" returnType="void">
+          <Argument type="Message" name="message"/>
+        </Method>
+        <Method name="getOwner" visibility="public" returnType="PersonalAgentID"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="sender" source="Message" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="receiver" source="Message" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="JAMWhileBehaviour" target="JAMBehaviour"/>
+    <UseRelation source="ConsoleChangeListener" target="ConsoleEvent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="performative" source="Message" target="Performative" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="adsl" source="ADSLMonitor" target="ADSLImpl" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="CategoryAgentID" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="JAMADSLException" target="JAMException"/>
+    <HasRelation name="myID" source="JAMAgent" target="PersonalAgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSL" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSLMonitor" target="ConsoleEvent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="adsl" source="JAMAgent" target="ADSL" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ADSLMonitor" target="ConsoleChangeListener"/>
+    <IsRelation name="is" source="JAMBehaviourException" target="JAMException"/>
+    <IsRelation name="is" source="MessageBox" target="MessageBoxNoSync"/>
+    <HasRelation name="a" source="buttonAction" target="ADSLMonitor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="JAMAgent" target="Performative" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSLImpl" target="ConsoleChangeListener" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="JAMAgent" target="JAMBehaviour" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myAgent" source="JAMBehaviour" target="JAMAgent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MessageBox" target="Message" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MessageBox" target="Performative" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="GenericAgentID" target="AgentID"/>
+    <UseRelation source="GenericAgentID" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myMessageBox" source="JAMAgent" target="MessageBox" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSLImpl" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSL" target="RemoteMessageBox" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="box" source="MessageBoxNoSync" target="Message" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <UseRelation source="PersonalAgentID" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="JAMMessageBoxException" target="JAMException"/>
+    <UseRelation source="RemoteMessageBox" target="Message" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="RemoteMessageBox" target="PersonalAgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Message" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Message" target="Performative" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MessageBoxNoSync" target="PersonalAgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MessageBoxNoSync" target="Message" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="PersonalAgentID" target="CategoryAgentID"/>
+    <UseRelation source="MessageBox" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="JAMAgent" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="owner" source="MessageBoxNoSync" target="PersonalAgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="MessageBox" target="RemoteMessageBox"/>
+    <IsRelation name="is" source="CategoryAgentID" target="GenericAgentID"/>
+    <UseRelation source="JAMAgent" target="PersonalAgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="JAMAgent" target="Message" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="JAMIOException" target="JAMException"/>
+    <HasRelation name="agent" source="JAMAgentMonitor" target="JAMAgent" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ADSLImpl" target="ADSL"/>
+    <HasRelation name="messagesBoxes" source="ADSLImpl" target="RemoteMessageBox" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <IsRelation name="is" source="JAMBehaviourInterruptedException" target="JAMBehaviourException"/>
+    <HasRelation name="myBehaviours" source="JAMAgent" target="JAMBehaviour" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <IsRelation name="is" source="JAMSimpleBehaviour" target="JAMBehaviour"/>
+    <UseRelation source="MessageBoxNoSync" target="AgentID" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSLImpl" target="RemoteMessageBox" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ADSLMonitor" target="ADSLMonitor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="MessageBoxNoSync" target="Performative" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

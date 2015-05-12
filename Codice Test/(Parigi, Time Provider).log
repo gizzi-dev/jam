@@ -1,0 +1,180 @@
+Log file per (Parigi, Time Provider)
+
+----> 50940792315 <----
+0- Inizializzazione comportamento.
+<<---------
+
+----> 50940792398 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50952496104 <----
+2- Ricevuto messaggio iniziale, inizio sua analisi
+<<---------
+
+----> 50952496236 <----
+9- REQUEST accettabile, preparo AGREE.
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952496597 <----
+10- Invio AGREE.
+Performative:		AGREE
+Sender:			(Parigi, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		REQUEST accettata
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50952545940 <----
+11- Inviata AGREE.
+Performative:		AGREE
+Sender:			(Parigi, Time Provider)
+Receiver:		(Matteo, Baldoni)
+Content:		REQUEST accettata
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Matteo, Baldoni)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50952546275 <----
+12- Mi metto in attesa conferma da (Matteo, Baldoni).
+<<---------
+
+----> 50953546540 <----
+13- Mi risveglio e verifico se arrivata conferfa da (Matteo, Baldoni).
+<<---------
+
+----> 50953546785 <----
+14- Nessuna conferma da (Matteo, Baldoni).
+<<---------
+
+----> 50953546918 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50953547069 <----
+2- Ricevuto messaggio iniziale, inizio sua analisi
+<<---------
+
+----> 50953547206 <----
+3- Performativa diversa da REQUEST, preparo REFUSE.
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953547530 <----
+4- Invio REFUSE
+Performative:		REFUSE
+Sender:			(Parigi, Time Provider)
+Receiver:		(Mario, Rossi)
+Content:		Performativa non accettata
+ExtraArgument: >--->
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953588282 <----
+5- Inviata REFUSE
+Performative:		REFUSE
+Sender:			(Parigi, Time Provider)
+Receiver:		(Mario, Rossi)
+Content:		Performativa non accettata
+ExtraArgument: >--->
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953588611 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50953588711 <----
+2- Ricevuto messaggio iniziale, inizio sua analisi
+<<---------
+
+----> 50953588797 <----
+6- Non capisco il content, preparo NOT_UDERSTOOD.
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50953588994 <----
+7- Invio NOT_UNDERSTOOD.
+Performative:		NOT_UNDERSTOOD
+Sender:			(Parigi, Time Provider)
+Receiver:		(Mercoledi, Adams)
+Content:		REQUEST non compresa
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953640112 <----
+8- Invita NOT_UNDERSTOOD.
+Performative:		NOT_UNDERSTOOD
+Sender:			(Parigi, Time Provider)
+Receiver:		(Mercoledi, Adams)
+Content:		REQUEST non compresa
+ExtraArgument: >--->
+Performative:		REQUEST
+Sender:			(Mercoledi, Adams)
+Receiver:		(generic, Time Provider)
+Content:		What time is it?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953640434 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------

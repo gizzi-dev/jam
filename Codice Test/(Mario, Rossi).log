@@ -1,0 +1,77 @@
+Log file per (Mario, Rossi)
+
+----> 50952457017 <----
+0- Inizializzazione comportamento.
+<<---------
+
+----> 50952457107 <----
+1- Start del comportamento, attesa messaggio iniziale.
+<<---------
+
+----> 50952457202 <----
+2- Preparo REQUEST dell'ora.
+<<---------
+
+----> 50952457304 <----
+3- Invio REQUEST.
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952499982 <----
+4- Invita REQUEST.
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<<---------
+
+----> 50952500233 <----
+5- Attendo risposta.
+<<---------
+
+----> 50953582778 <----
+6- Trovata risposta.
+Performative:		REFUSE
+Sender:			(Parigi, Time Provider)
+Receiver:		(Mario, Rossi)
+Content:		Performativa non accettata
+ExtraArgument: >--->
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953583100 <----
+7- La risposta non e' una agree eseguo una done.
+Performative:		REFUSE
+Sender:			(Parigi, Time Provider)
+Receiver:		(Mario, Rossi)
+Content:		Performativa non accettata
+ExtraArgument: >--->
+Performative:		INFORM
+Sender:			(Mario, Rossi)
+Receiver:		(generic, Time Provider)
+Content:		Che ora e'?
+ExtraArgument: >--->
+null
+<--------<---------<
+<--------<---------<
+<<---------
+
+----> 50953583394 <----
+END- Esecuguita dispose.
+<<---------
